@@ -1,0 +1,22 @@
+diff -Naur egl-wayland2-33c9941dfa974f8326f3e54723788926dd895df8.old/src/wayland/meson.build egl-wayland2-33c9941dfa974f8326f3e54723788926dd895df8/src/wayland/meson.build
+--- egl-wayland2-33c9941dfa974f8326f3e54723788926dd895df8.old/src/wayland/meson.build	2025-08-06 19:01:39.468924200 +0200
++++ egl-wayland2-33c9941dfa974f8326f3e54723788926dd895df8/src/wayland/meson.build	2025-08-06 19:32:18.728887183 +0200
+@@ -18,14 +18,14 @@
+ dep_dl = meson.get_compiler('c').find_library('dl', required : false)
+ dep_wayland_egl_backend = dependency('wayland-egl-backend', version : ['>=3'])
+ 
+-wl_protos = dependency('wayland-protocols', version: '>= 1.38')
++wl_protos = dependency('wayland-protocols')
+ wl_protos_dir = wl_protos.get_variable('pkgdatadir')
+ wl_drm_xml = 'wayland-drm.xml'
+ wl_dmabuf_xml = join_paths(wl_protos_dir, 'unstable', 'linux-dmabuf', 'linux-dmabuf-unstable-v1.xml')
+-wl_drm_syncobj_xml = join_paths(wl_protos_dir, 'staging', 'linux-drm-syncobj', 'linux-drm-syncobj-v1.xml')
++wl_drm_syncobj_xml = 'linux-drm-syncobj-v1.xml'
+ wp_presentation_xml = join_paths(wl_protos_dir, 'stable', 'presentation-time', 'presentation-time.xml')
+-wp_fifo_xml = join_paths(wl_protos_dir, 'staging', 'fifo', 'fifo-v1.xml')
+-wp_commit_timing_xml = join_paths(wl_protos_dir, 'staging', 'commit-timing', 'commit-timing-v1.xml')
++wp_fifo_xml = 'fifo-v1.xml'
++wp_commit_timing_xml = 'commit-timing-v1.xml'
+ 
+ wl_scanner = dependency('wayland-scanner', native: true)
+ prog_scanner = find_program(wl_scanner.get_variable('wayland_scanner'))
