@@ -5,7 +5,7 @@
 
 Name:           egl-wayland2
 Version:        1.0.0%{!?tag:~%{date}git%{shortcommit0}}
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Dma-buf-based Wayland external platform library
 # src/wayland/dma-buf.h is GPL 2, rest is Apache 2.0
 License:        Apache-2.0 and GPL-2.0
@@ -70,6 +70,9 @@ rm -f %{buildroot}%{_libdir}/libnvidia-egl-wayland2.so
 %{_datadir}/egl/egl_external_platform.d/09_nvidia_wayland2.json
 
 %changelog
+* Thu Aug 07 2025 Simone Caronni <negativo17@gmail.com> - 1.0.0~20250806gitd4deb7c-3
+- Update to latest snapshot.
+
 * Wed Aug 06 2025 Simone Caronni <negativo17@gmail.com> - 1.0.0~20250806gitd4deb7c-2
 - Update to latest snapshot.
 
