@@ -1,11 +1,11 @@
-%global commit0 0c15809fcfb3fcf4b2eb2422fdd1dae4f9aea6ae
-%global date 20251112
+%global commit0 3e5b643542708cbb9c67d18fe19b5fa4151d7d8f
+%global date 20251124
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 #global tag %{version}
 
 Name:           egl-wayland2
 Version:        1.0.1%{!?tag:~%{date}git%{shortcommit0}}
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        Dma-buf-based Wayland external platform library
 # src/wayland/dma-buf.h is GPL 2, rest is Apache 2.0
 License:        Apache-2.0 and GPL-2.0
@@ -70,6 +70,9 @@ rm -f %{buildroot}%{_libdir}/libnvidia-egl-wayland2.so
 %{_datadir}/egl/egl_external_platform.d/09_nvidia_wayland2.json
 
 %changelog
+* Thu Nov 27 2025 Simone Caronni <negativo17@gmail.com> - 1.0.1~20251124git3e5b643-7
+- Update to latest snapshot.
+
 * Mon Nov 17 2025 Simone Caronni <negativo17@gmail.com> - 1.0.1~20251112git0c15809-6
 - Update to latest snapshot.
 
